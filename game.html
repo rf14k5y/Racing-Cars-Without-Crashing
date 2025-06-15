@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Racing Cars Without Crashing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game">
+    <div id="score">Score: 0</div>
+    <div id="high-score">High Score: 0</div>
+    <div id="menu-btn" title="Menu Pause">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="player"></div>
+  </div>
+
+  <div id="pause-menu">
+    <div id="pause-menu-box">
+      <button id="resume-btn">Lanjut</button>
+      <button id="restart-btn">Ulangi</button>
+      <button id="home-btn">Beranda</button>
+    </div>
+  </div>
+
+  <div id="game-over">
+    <div id="game-over-box">
+      <h2>Game Over</h2>
+      <p id="final-score"></p>
+      <button id="restart-btn-gameover">Ulangi</button>
+    </div>
+  </div>
+
+  <audio id="crash-sound" src="crash.mp3"></audio>
+  <audio id="levelup-sound" src="level-up.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

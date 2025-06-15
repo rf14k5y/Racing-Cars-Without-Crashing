@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Racing Cars Without Crashing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu-container {
+      width: 360px;
+      height: 600px;
+      background: #222;
+      border: 4px solid #ffd700;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #ffd700;
+      font-size: 32px;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px #ffd700;
+    }
+
+    button {
+      width: 200px;
+      font-size: 18px;
+      padding: 12px;
+      margin: 10px;
+      background: #ffd700;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffd700;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    #settings-modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #settings-box {
+      background: #333;
+      color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    #settings-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .setting-group {
+      margin-bottom: 20px;
+    }
+
+    #close-settings {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      background: #ffd700;
+      color: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container">
+    <h1>Racing Cars Without Crashing</h1>
+    <button onclick="window.location.href='game.html'">Mulai Game</button>
+    <button onclick="alert('Fitur segera hadir')">Leaderboard</button>
+    <button onclick="document.getElementById('settings-modal').style.display='flex'">Pengaturan</button>
+    <div class="footer">&copy; 2025 Game Balapan</div>
+  </div>
+
+  <div id="settings-modal">
+    <div id="settings-box">
+      <h2>Pengaturan</h2>
+      <div class="setting-group">
+        <h3>Cara Bermain:</h3>
+        <p>Gunakan tombol panah kiri dan kanan untuk menghindari mobil lain. Raih skor setinggi mungkin tanpa menabrak!</p>
+      </div>
+      <div class="setting-group">
+        <h3>Peraturan:</h3>
+        <ul>
+          <li>Permainan akan berakhir jika menabrak mobil lain.</li>
+          <li>Setiap 10 mobil yang terhindar, level akan meningkat.</li>
+          <li>Skor tertinggi disimpan secara lokal.</li>
+        </ul>
+      </div>
+      <button id="close-settings">Tutup</button>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('close-settings').addEventListener('click', () => {
+    document.getElementById('settings-modal').style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

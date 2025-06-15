@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Fredoka One', cursive, Arial, sans-serif;
+  background-color: #111;
+  color: #333;
+}
+
+#game {
+  width: 400px;
+  height: 600px;
+  margin: 20px auto;
+  background-image: url('jalan.png');
+  background-size: 100% auto;
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #555;
+  color: white;
+  font-weight: bold;
+}
+
+#player {
+  width: 50px;
+  height: 90px;
+  position: absolute;
+  bottom: 30px;
+  left: 135px;
+  background-image: url('player.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: left 0.2s ease;
+  z-index: 5;
+}
+
+.enemy {
+  width: 50px;
+  height: 90px;
+  position: absolute;
+  top: -100px;
+  background-image: url('mobil1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 4;
+}
+
+#score, #high-score {
+  position: absolute;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px #00ffcc;
+  user-select: none;
+}
+
+#score {
+  top: 10px;
+  left: 10px;
+  color: #00ffcc;
+  border: 2px solid #00ffcc;
+}
+
+#high-score {
+  top: 10px;
+  right: 10px;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+/* Menu (titik 3) di bawah high score */
+#menu-btn {
+  position: absolute;
+  top: 60px; /* geser lebih ke bawah */
+  right: 10px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 15;
+  user-select: none;
+}
+
+
+#menu-btn span {
+  display: block;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 2px;
+}
+
+/* Pause menu overlay */
+#pause-menu {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  user-select: none;
+}
+
+#pause-menu-box {
+  background: #222;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px #ffd700;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 200px;
+}
+
+#pause-menu-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffd700;
+  color: #222;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#pause-menu-box button:hover {
+  background-color: #ffdb4d;
+}
+
+/* Game over screen */
+#game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+#game-over-box {
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 15px red;
+}
+
+#restart-btn-gameover {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Level banner animation */
+@keyframes slideFade {
+  0% { transform: translateY(-100%) scale(0.8); opacity: 0; }
+  30% { transform: translateY(0) scale(1.1); opacity: 1; }
+  60% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100%) scale(0.8); opacity: 0; }
+}
+
+.level-banner {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  animation: slideFade 2.5s ease forwards;
+  z-index: 9999;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  pointer-events: none; /* supaya tidak ganggu klik */
+}
