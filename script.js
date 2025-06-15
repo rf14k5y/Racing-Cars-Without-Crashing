@@ -143,7 +143,7 @@ resumeBtn.addEventListener("click", () => {
 
 restartBtn.addEventListener("click", () => window.location.reload());
 restartBtnGameOver.addEventListener("click", () => window.location.reload());
-homeBtn.addEventListener("click", () => (window.location.href = "awal.html"));
+homeBtn.addEventListener("click", () => (window.location.href = "index.html"));
 
 // --- Start Game ---
 setInterval(() => {
